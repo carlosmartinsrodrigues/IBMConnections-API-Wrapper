@@ -1,0 +1,7 @@
+C:\Carlos\October Presentation\Samples\Samples.Sharepoint\bin\Debug\Samples.Sharepoint.pdb
+C:\Carlos\October Presentation\Samples\Samples.Sharepoint\obj\Debug\Samples.Sharepoint.dll
+C:\Carlos\October Presentation\Samples\Samples.Sharepoint\obj\Debug\Samples.Sharepoint.pdb
+C:\Carlos\October Presentation\Samples\Samples.Sharepoint\obj\Debug\Samples.Sharepoint.csprojResolveAssemblyReference.cache
+C:\Carlos\October Presentation\IBMConnections-API-Wrapper\Samples\Samples.Sharepoint\bin\Debug\Samples.Sharepoint.pdb
+C:\Carlos\October Presentation\IBMConnections-API-Wrapper\Samples\Samples.Sharepoint\obj\Debug\Samples.Sharepoint.dll
+C:\Carlos\October Presentation\IBMConnections-API-Wrapper\Samples\Samples.Sharepoint\obj\Debug\Samples.Sharepoint.pdb

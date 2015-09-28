@@ -1,0 +1,3 @@
+C:\Carlos\October Presentation\Samples\Samples.Sharepoint\bin\Release\Samples.Sharepoint.pdb
+C:\Carlos\October Presentation\Samples\Samples.Sharepoint\obj\Release\Samples.Sharepoint.dll
+C:\Carlos\October Presentation\Samples\Samples.Sharepoint\obj\Release\Samples.Sharepoint.pdb

@@ -1,0 +1,11 @@
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBMConnectionsAPIWrapper\bin\Release\IBM.Connections.Net.Api.dll
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBMConnectionsAPIWrapper\bin\Release\IBM.Connections.Net.Api.pdb
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBMConnectionsAPIWrapper\bin\Release\IBM.Connections.Net.Settings.dll
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBMConnectionsAPIWrapper\bin\Release\log4net.dll
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBMConnectionsAPIWrapper\bin\Release\RestSharp.dll
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBMConnectionsAPIWrapper\bin\Release\IBM.Connections.Net.Settings.pdb
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBMConnectionsAPIWrapper\bin\Release\log4net.xml
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBMConnectionsAPIWrapper\bin\Release\RestSharp.xml
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBMConnectionsAPIWrapper\obj\Release\IBM.Connections.Net.Api.csprojResolveAssemblyReference.cache
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBMConnectionsAPIWrapper\obj\Release\IBM.Connections.Net.Api.dll
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBMConnectionsAPIWrapper\obj\Release\IBM.Connections.Net.Api.pdb

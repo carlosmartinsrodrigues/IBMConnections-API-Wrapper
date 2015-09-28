@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="Scripts">
+    <File Path="Scripts\_references.js" Url="Scripts/_references.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\App.js" Url="Scripts/App.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\connectionsClient.js" Url="Scripts/connectionsClient.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\jquery-2.1.4.min.map" Url="Scripts/jquery-2.1.4.min.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\jquery-2.1.4.min.js" Url="Scripts/jquery-2.1.4.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\jquery-2.1.4.js" Url="Scripts/jquery-2.1.4.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\jquery-2.1.4.intellisense.js" Url="Scripts/jquery-2.1.4.intellisense.js" ReplaceContent="TRUE" />
+  </Module>
+</Elements>

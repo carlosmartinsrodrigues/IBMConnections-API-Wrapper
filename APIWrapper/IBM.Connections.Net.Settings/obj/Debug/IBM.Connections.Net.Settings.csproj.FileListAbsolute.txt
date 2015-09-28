@@ -1,0 +1,9 @@
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBM.Connections.Net.Settings\bin\Debug\IBM.Connections.Net.Settings.dll
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBM.Connections.Net.Settings\bin\Debug\IBM.Connections.Net.Settings.pdb
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBM.Connections.Net.Settings\obj\Debug\IBM.Connections.Net.Settings.csprojResolveAssemblyReference.cache
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBM.Connections.Net.Settings\obj\Debug\IBM.Connections.Net.Settings.dll
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBM.Connections.Net.Settings\obj\Debug\IBM.Connections.Net.Settings.pdb
+C:\Carlos\October Presentation\IBMConnections-API-Wrapper\APIWrapper\IBM.Connections.Net.Settings\bin\Debug\IBM.Connections.Net.Settings.dll
+C:\Carlos\October Presentation\IBMConnections-API-Wrapper\APIWrapper\IBM.Connections.Net.Settings\bin\Debug\IBM.Connections.Net.Settings.pdb
+C:\Carlos\October Presentation\IBMConnections-API-Wrapper\APIWrapper\IBM.Connections.Net.Settings\obj\Debug\IBM.Connections.Net.Settings.dll
+C:\Carlos\October Presentation\IBMConnections-API-Wrapper\APIWrapper\IBM.Connections.Net.Settings\obj\Debug\IBM.Connections.Net.Settings.pdb

@@ -1,0 +1,8 @@
+C:\Carlos\October Presentation\Samples\Samples.ConsoleApplication\bin\Release\Samples.ConsoleApplication.exe.config
+C:\Carlos\October Presentation\Samples\Samples.ConsoleApplication\bin\Release\Samples.ConsoleApplication.exe
+C:\Carlos\October Presentation\Samples\Samples.ConsoleApplication\bin\Release\Samples.ConsoleApplication.pdb
+C:\Carlos\October Presentation\Samples\Samples.ConsoleApplication\bin\Release\RestSharp.dll
+C:\Carlos\October Presentation\Samples\Samples.ConsoleApplication\bin\Release\RestSharp.xml
+C:\Carlos\October Presentation\Samples\Samples.ConsoleApplication\obj\Release\Samples.ConsoleApplication.csprojResolveAssemblyReference.cache
+C:\Carlos\October Presentation\Samples\Samples.ConsoleApplication\obj\Release\Samples.ConsoleApplication.exe
+C:\Carlos\October Presentation\Samples\Samples.ConsoleApplication\obj\Release\Samples.ConsoleApplication.pdb

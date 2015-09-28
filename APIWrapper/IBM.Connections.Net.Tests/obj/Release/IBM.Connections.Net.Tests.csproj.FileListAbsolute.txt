@@ -1,0 +1,13 @@
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBM.Connections.Net.Tests\bin\Release\IBM.Connections.Net.Tests.dll
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBM.Connections.Net.Tests\bin\Release\IBM.Connections.Net.Tests.pdb
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBM.Connections.Net.Tests\bin\Release\IBM.Connections.Net.Api.dll
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBM.Connections.Net.Tests\bin\Release\IBM.Connections.Net.Settings.dll
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBM.Connections.Net.Tests\bin\Release\log4net.dll
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBM.Connections.Net.Tests\bin\Release\RestSharp.dll
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBM.Connections.Net.Tests\bin\Release\IBM.Connections.Net.Settings.pdb
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBM.Connections.Net.Tests\bin\Release\IBM.Connections.Net.Api.pdb
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBM.Connections.Net.Tests\bin\Release\log4net.xml
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBM.Connections.Net.Tests\bin\Release\RestSharp.xml
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBM.Connections.Net.Tests\obj\Release\IBM.Connections.Net.Tests.csprojResolveAssemblyReference.cache
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBM.Connections.Net.Tests\obj\Release\IBM.Connections.Net.Tests.dll
+C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBM.Connections.Net.Tests\obj\Release\IBM.Connections.Net.Tests.pdb
