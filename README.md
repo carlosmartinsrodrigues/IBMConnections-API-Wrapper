@@ -8,7 +8,7 @@ Installation
 
 The client library requires .NET Framework 4.5 or higher and [RestSharp](https://www.nuget.org/packages/RestSharp) as its dependency.
 
-This package is available on NuGet Gallery. To install the [Podio package](http://www.nuget.org/packages/IBMConnectionsAPIWrapper) run the following command in the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
+This package is available on NuGet Gallery. To install the [Package](http://www.nuget.org/packages/IBMConnectionsAPIWrapper) run the following command in the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
 
     PM> Install-Package IBMConnectionsAPIWrapper
 
