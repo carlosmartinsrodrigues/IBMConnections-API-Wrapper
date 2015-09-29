@@ -9,10 +9,12 @@ var ibmConnectionsClient =(function() {
 	var password="jones1";
 	
 
-   /*
-   beforeSend: function(xhr) {
-			xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + password));
-		},*/
+	function make_base_auth() {
+	   var tok = username + ':' + password;
+	   var hash = btoa(tok);
+	   return "Basic " + hash;
+	}
+  
 
 	service.PerformSearch = function (searchString) {
        $.support.cors = true;
@@ -25,11 +27,12 @@ var ibmConnectionsClient =(function() {
 		xhrFields: { withCredentials: true },
 		
 		success: function(xml){
-			console.log(xml);
 			$(xml).find('entry').each(function(){
-			  var sTitle = $(this).find('Title').text();
+			   var sTitle = $(this).find('Title').text();
+			   var sId = $(this).find('id').text()
+			   sId = sId.replace("tag:profiles.ibm.com,2006:entry", "");
 			  var card = $(this).find('content').html();
-			  $("<div class='container-businesscard'></div>").html(sTitle + "<br /> " + card).appendTo("#searchresults");
+			  $("<div class='container-businesscard'></div>").html(sTitle + "<br/><a class='followUser' rel='" + sId + "' >Click to follow</a><br /> " + card).appendTo("#searchresults");
 			});
 		},
 		error: function(err) {
@@ -38,7 +41,124 @@ var ibmConnectionsClient =(function() {
 		}
 	  });
 
-   }
+	}
+
+	service.StartFollowing = function (userId) {
+	   $.support.cors = true;
+	   var _url = domainUrl + '/profiles/follow/atom/resources';
+
+	   $.ajax({
+	      type: "POST",
+	      url: _url,
+	      dataType: "xml",
+	      xhrFields: { withCredentials: true },
+	      data: { key: userId, connectionType: "colleague" },
+	      beforeSend: function (xhr) {
+	         xhr.setRequestHeader("Authorization", "Basic " + make_base_auth());
+	      },
+	      success: function (xml) {
+	         $(xml).find('entry').each(function () {
+	            var sTitle = $(this).find('Title').text();
+
+	            var card = $(this).find('content').html();
+	            $("<div class='container-businesscard'></div>").html(sTitle + "<br /> " + card).appendTo("#searchresults");
+	         });
+	      },
+	      error: function (err) {
+	         console.log(err);
+	         //alert("An error occurred while processing XML file.");
+	      }
+	   });
+
+	}
+
+	service.PeopleFollowing = function () {
+	   $.support.cors = true;
+	   var _url = domainUrl + '/profiles/follow/atom/resources?type=Profile&source=profiles&inclMessage=True&inclUserStatus=True';
+	  
+	   $.ajax({
+	      type: "GET",
+	      url: _url,
+	      dataType: "xml",
+	      xhrFields: { withCredentials: true },
+        beforeSend: function(xhr) {
+           xhr.setRequestHeader("Authorization", "Basic " + make_base_auth());
+           },
+        success: function (xml) {
+           $("#followingresults").empty();
+           $(xml).find('entry').each(function () {
+              console.log($(this).find('title'));
+              var sTitle = $(this).find('title').text();
+              var sId = $(this).find('id').text().replace("urn:lsid:ibm.com:follow:resource-","");
+              var sImage = "<img src='" + domainUrl + "/profiles/photo.do?key=" + sId + "' class='photo'>";
+              $("<div class='container-businesscard'></div>").html(sImage+"<br/>"+sTitle).appendTo("#followingresults");
+	         });
+	      },
+	      error: function (err) {
+	         console.log(err);
+	         //alert("An error occurred while processing XML file.");
+	      }
+	   });
+
+	}
+
+	service.ShowStatus = function () {
+	   $.support.cors = true;
+	   var _url = domainUrl + '/profiles/atom/mv/theboard/entries/all.do';
+	   
+	   $.ajax({
+	      type: "GET",
+	      url: _url,
+	      dataType: "xml",
+	      xhrFields: { withCredentials: true },
+	      beforeSend: function (xhr) {
+	         xhr.setRequestHeader("Authorization", "Basic " + make_base_auth());
+	      },
+	      success: function (xml) {
+	         $("#MyStatusResults").empty();
+	         $(xml).find('entry').each(function () {
+	            var sAuthor = $(this).find('author').find('name').text();
+	            var sId = $(this).find('author').find('userid').text();
+	            var sPublished = $(this).find('published').text();
+	            var sTitle = $(this).find('title').text();
+	            var sId = $(this).find('id').text().replace("urn:lsid:ibm.com:follow:resource-", "");
+	            var sImage = "<img src='" + domainUrl + "/profiles/photo.do?key=" + sId + "' class='photo'>";
+	            $("<div class='container-status'></div>").html("<div class='statuswrapper'><div class='image'>" + sImage + "</div><div class='status'>" + sTitle + "<br/>" + sAuthor + "<br/>" + sPublished).appendTo("#MyStatusResults");
+	         });
+	      },
+	      error: function (err) {
+	         console.log(err);
+	         //alert("An error occurred while processing XML file.");
+	      }
+	   });
+
+	}
+	service.UpdateStatus = function (message) {
+	   $.support.cors = true;
+	   var _url = domainUrl + '/profiles/atom/mv/theboard/entries/related.do';
+
+	   $.ajax({
+	      type: "GET",
+	      url: _url,
+	      dataType: "xml",
+	      xhrFields: { withCredentials: true },
+	      beforeSend: function (xhr) {
+	         xhr.setRequestHeader("Authorization", "Basic " + make_base_auth());
+	      },
+	      success: function (xml) {
+	         $(xml).find('entry').each(function () {
+	            var sTitle = $(this).find('Title').text();
+	            var card = $(this).find('content').html();
+	            $("<div class='container-businesscard'></div>").html(sTitle + "<br /> " + card).appendTo("#searchresults");
+	         });
+	      },
+	      error: function (err) {
+	         console.log(err);
+	         //alert("An error occurred while processing XML file.");
+	      }
+	   });
+
+	}
 
 	return service;
 }());
@@ -48,8 +168,18 @@ $(document).ready(function () {
       event.preventDefault(); // cancel default behavior
       ibmConnectionsClient.PerformSearch($("#search").val());
    })
-	//console.log("ready");
-	//console.log(ibmConnectionsClient);
-	
+   $("#followingOption").click(function (event) {
+      ibmConnectionsClient.PeopleFollowing();
+   })
+   $("#searchresults").on('click', '.followUser', function () {
+      ibmConnectionsClient.StartFollowing($(this).attr("rel"));
+   });
+   $("#ibm-statusUpdate").click(function (event) {
+      event.preventDefault(); // cancel default behavior     
+      ibmConnectionsClient.UpdateStatus($("#statusUpdate").val());
+   })
+   $("#myStatusOption").click(function (event) {
+      ibmConnectionsClient.ShowStatus();
+   })
 
 });

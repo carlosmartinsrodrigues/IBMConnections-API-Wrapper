@@ -44,3 +44,22 @@ C:\Carlos\October Presentation\Samples\Samples.OfficeAddIn\obj\Release\Samples.O
 C:\Carlos\October Presentation\Samples\Samples.OfficeAddIn\obj\Release\Samples.OfficeAddIn.csproj.GenerateResource.Cache
 C:\Carlos\October Presentation\Samples\Samples.OfficeAddIn\obj\Release\Samples.OfficeAddIn.dll
 C:\Carlos\October Presentation\Samples\Samples.OfficeAddIn\obj\Release\Samples.OfficeAddIn.pdb
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.OfficeAddIn\bin\Release\Samples.OfficeAddIn.dll
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.OfficeAddIn\bin\Release\Samples.OfficeAddIn.pdb
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.OfficeAddIn\bin\Release\Samples.OfficeAddIn.dll.manifest
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.OfficeAddIn\bin\Release\Samples.OfficeAddIn.vsto
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.OfficeAddIn\bin\Release\IBM.Connections.Net.Api.dll
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.OfficeAddIn\bin\Release\IBM.Connections.Net.Settings.dll
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.OfficeAddIn\bin\Release\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.OfficeAddIn\bin\Release\Samples.UI.dll
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.OfficeAddIn\bin\Release\IBM.Connections.Net.Api.pdb
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.OfficeAddIn\bin\Release\IBM.Connections.Net.Settings.pdb
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.OfficeAddIn\bin\Release\Samples.UI.pdb
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.OfficeAddIn\bin\Release\Microsoft.Office.Tools.Common.v4.0.Utilities.xml
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.OfficeAddIn\obj\Release\Samples.OfficeAddIn.csprojResolveAssemblyReference.cache
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.OfficeAddIn\obj\Release\OfficeAddIn.FilesList.resources
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.OfficeAddIn\obj\Release\Samples.OfficeAddIn.OfficeRibbon.resources
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.OfficeAddIn\obj\Release\Samples.OfficeAddIn.Properties.Resources.resources
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.OfficeAddIn\obj\Release\Samples.OfficeAddIn.csproj.GenerateResource.Cache
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.OfficeAddIn\obj\Release\Samples.OfficeAddIn.dll
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.OfficeAddIn\obj\Release\Samples.OfficeAddIn.pdb

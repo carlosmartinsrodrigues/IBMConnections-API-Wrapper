@@ -71,10 +71,14 @@ namespace IBM.Connections.Net.Api
          get
          {
             string userID = config.GetUserID();
-            if (string.IsNullOrEmpty(config.GetUserID()))
+            if (string.IsNullOrEmpty(userID))
             {
-               UserIntrospection();
-               userID = config.GetUserID();
+               var result = AuthenticationService.Authenticate(user.Username, user.Password);
+               if (result.Authenticated)
+               {
+                  config.SetUserID(result.UserID);
+                  userID = result.UserID;
+               }
             }
             return userID;
          }
@@ -82,39 +86,7 @@ namespace IBM.Connections.Net.Api
       #endregion
 
       #region inspectServer
-      /// <summary>
-      /// Pings the server introspection in order to see if we've a 200 response
-      /// </summary>
-      /// <returns></returns>
-      public BaseResponse PingServer()
-      {
-         BaseResponse serviceResponse = new BaseResponse();
 
-         var serviceUrl = config.IntrospectionService;
-
-         try
-         {
-            var client = getClient();
-            var request = new RestRequest(serviceUrl, Method.GET);
-            IRestResponse response = client.Execute(request);
-            serviceResponse.RawResponse = response.Content;
-            serviceResponse.IsSuccesful = (response.ResponseStatus == ResponseStatus.Completed);
-         }
-         catch (WebException exception)
-         {
-            using (Stream stream = exception.Response.GetResponseStream())
-            {
-               StreamReader reader = new StreamReader(stream, Encoding.UTF8);
-               String responseString = reader.ReadToEnd();
-               serviceResponse.RawResponse = responseString;
-               _log.Error(responseString);
-            }
-            _log.Error(exception);
-
-            serviceResponse.IsSuccesful = false;
-         }
-         return serviceResponse;
-      }
 
       /// <summary>
       /// Get the config of the server
@@ -237,40 +209,40 @@ namespace IBM.Connections.Net.Api
       /// Get the introspection of the server
       /// </summary>
       /// <returns></returns>
-      private void UserIntrospection()
-      {
-         UserServiceIntrospection serviceResponse = new UserServiceIntrospection();
-         try
-         {
+      //private void UserIntrospection()
+      //{
+      //   UserServiceIntrospection serviceResponse = new UserServiceIntrospection();
+      //   try
+      //   {
 
-            var client = getClient();
+      //      var client = getClient();
 
-            var request = new RestRequest(config.UserIntrospectionService, Method.GET);
+      //      var request = new RestRequest(config.UserIntrospectionService, Method.GET);
 
-            IRestResponse<UserServiceIntrospection> response = client.Execute<UserServiceIntrospection>(request);
+      //      IRestResponse<UserServiceIntrospection> response = client.Execute<UserServiceIntrospection>(request);
 
-            bool IsSuccesful = (response.StatusCode == HttpStatusCode.OK);
-            if (!IsSuccesful)
-               return;
+      //      bool IsSuccesful = (response.StatusCode == HttpStatusCode.OK);
+      //      if (!IsSuccesful)
+      //         return;
 
-            serviceResponse = response.Data;
+      //      serviceResponse = response.Data;
 
-            config.SetUserID(serviceResponse.id);
-            config.Name = serviceResponse.name;
-            config.Email = serviceResponse.email;
-         }
-         catch (WebException exception)
-         {
-            using (Stream stream = exception.Response.GetResponseStream())
-            {
-               StreamReader reader = new StreamReader(stream, Encoding.UTF8);
-               String responseString = reader.ReadToEnd();
-               _log.Error(responseString);
-            }
-            _log.Error(exception);
+      //      config.SetUserID(serviceResponse.id);
+      //      config.Name = serviceResponse.name;
+      //      config.Email = serviceResponse.email;
+      //   }
+      //   catch (WebException exception)
+      //   {
+      //      using (Stream stream = exception.Response.GetResponseStream())
+      //      {
+      //         StreamReader reader = new StreamReader(stream, Encoding.UTF8);
+      //         String responseString = reader.ReadToEnd();
+      //         _log.Error(responseString);
+      //      }
+      //      _log.Error(exception);
 
-         }
-      }
+      //   }
+      //}
       #endregion
 
 
@@ -297,6 +269,12 @@ namespace IBM.Connections.Net.Api
       public ProfilesService ProfilesService
       {
          get { return new ProfilesService(this); }
+      }
+
+
+      public AuthenticationService AuthenticationService
+      {
+         get { return new AuthenticationService(this); }
       }
       #endregion
 
@@ -332,9 +310,10 @@ namespace IBM.Connections.Net.Api
          if (!(response.StatusCode == HttpStatusCode.OK))
          {
 
-            var requestFailed = new Request(url, requestData, method.ToString());
-            var connectionsError = new ConnectionsError(response.StatusCode.ToString(), response.StatusDescription, response.ErrorException.InnerException.ToString(), requestFailed);
-            throw new ConnectionsException((int)HttpStatusCode.BadRequest, connectionsError);
+            var requestFailed = new Request(client.BaseUrl + url, requestData, method.ToString());
+            string innerException = (response.ErrorException.InnerException != null) ? response.ErrorException.InnerException.ToString() : "";
+            var connectionsError = new ConnectionsError(response.StatusCode.ToString(), response.StatusDescription, innerException, requestFailed);
+            throw new ConnectionsException((int)response.StatusCode, connectionsError);
          }
 
          return response.Data;

@@ -15,3 +15,16 @@ C:\Carlos\October Presentation\Samples\Samples.UI\obj\Release\Samples.UI.csproj.
 C:\Carlos\October Presentation\Samples\Samples.UI\obj\Release\Samples.UI.dll
 C:\Carlos\October Presentation\Samples\Samples.UI\obj\Release\Samples.UI.pdb
 C:\Carlos\October Presentation\Samples\Samples.UI\obj\Release\Samples.UI.OfficeSideBar.resources
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\bin\Release\Samples.UI.dll
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\bin\Release\Samples.UI.pdb
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\bin\Release\IBM.Connections.Net.Api.dll
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\bin\Release\IBM.Connections.Net.Settings.dll
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\bin\Release\IBM.Connections.Net.Api.pdb
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\bin\Release\IBM.Connections.Net.Settings.pdb
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\obj\Release\Samples.UI.csprojResolveAssemblyReference.cache
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\obj\Release\Samples.UI.Login.resources
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\obj\Release\Samples.UI.MyFiles.resources
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\obj\Release\Samples.UI.OfficeSideBar.resources
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\obj\Release\Samples.UI.csproj.GenerateResource.Cache
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\obj\Release\Samples.UI.dll
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\obj\Release\Samples.UI.pdb

@@ -29,3 +29,18 @@ C:\Carlos\October Presentation\IBMConnections-API-Wrapper\Samples\Samples.UI\bin
 C:\Carlos\October Presentation\IBMConnections-API-Wrapper\Samples\Samples.UI\bin\Debug\RestSharp.xml
 C:\Carlos\October Presentation\IBMConnections-API-Wrapper\Samples\Samples.UI\obj\Debug\Samples.UI.dll
 C:\Carlos\October Presentation\IBMConnections-API-Wrapper\Samples\Samples.UI\obj\Debug\Samples.UI.pdb
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\bin\Debug\Samples.UI.dll
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\bin\Debug\Samples.UI.pdb
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\bin\Debug\IBM.Connections.Net.Api.dll
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\bin\Debug\IBM.Connections.Net.Settings.dll
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\bin\Debug\IBM.Connections.Net.Api.pdb
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\bin\Debug\IBM.Connections.Net.Settings.pdb
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\bin\Debug\log4net.xml
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\bin\Debug\RestSharp.xml
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\obj\Debug\Samples.UI.csprojResolveAssemblyReference.cache
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\obj\Debug\Samples.UI.Login.resources
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\obj\Debug\Samples.UI.MyFiles.resources
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\obj\Debug\Samples.UI.OfficeSideBar.resources
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\obj\Debug\Samples.UI.csproj.GenerateResource.Cache
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\obj\Debug\Samples.UI.dll
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.UI\obj\Debug\Samples.UI.pdb

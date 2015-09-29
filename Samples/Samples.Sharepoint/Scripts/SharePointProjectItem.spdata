@@ -3,7 +3,6 @@
   <Files>
     <ProjectItemFile Source="Elements.xml" Target="Scripts\" Type="ElementManifest" />
     <ProjectItemFile Source="_references.js" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="App.js" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="connectionsClient.js" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="jquery-2.1.4.min.map" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="jquery-2.1.4.min.js" Target="Scripts\" Type="ElementFile" />

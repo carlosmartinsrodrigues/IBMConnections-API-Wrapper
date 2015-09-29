@@ -44,12 +44,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Content\App.css" />
+    <Content Include="Content\favicon.ico" />
     <Content Include="Data\IBMConnectionsSettings\Elements.xml" />
     <Content Include="Data\IBMConnectionsSettings\IBMConnectionsSettingsInstance\Elements.xml" />
     <Content Include="Data\IBMConnectionsSettings\Schema.xml" />
     <Content Include="Elements.xml" />
     <None Include="readme.txt" />
-    <Content Include="Scripts\App.js" />
     <Content Include="Scripts\connectionsClient.js" />
     <Content Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />

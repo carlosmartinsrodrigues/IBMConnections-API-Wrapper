@@ -16,3 +16,10 @@ C:\Carlos\October Presentation\IBMConnections-API-Wrapper\APIWrapper\IBM.Connect
 C:\Carlos\October Presentation\IBMConnections-API-Wrapper\APIWrapper\IBM.Connections.Net.APIWrapper\obj\Debug\IBM.Connections.Net.Api.csprojResolveAssemblyReference.cache
 C:\Carlos\October Presentation\IBMConnections-API-Wrapper\APIWrapper\IBM.Connections.Net.APIWrapper\obj\Debug\IBM.Connections.Net.Api.dll
 C:\Carlos\October Presentation\IBMConnections-API-Wrapper\APIWrapper\IBM.Connections.Net.APIWrapper\obj\Debug\IBM.Connections.Net.Api.pdb
+C:\Carlos\Projects\IBMConnections-API-Wrapper\APIWrapper\IBM.Connections.Net.APIWrapper\bin\Debug\IBM.Connections.Net.Api.dll
+C:\Carlos\Projects\IBMConnections-API-Wrapper\APIWrapper\IBM.Connections.Net.APIWrapper\bin\Debug\IBM.Connections.Net.Api.pdb
+C:\Carlos\Projects\IBMConnections-API-Wrapper\APIWrapper\IBM.Connections.Net.APIWrapper\bin\Debug\IBM.Connections.Net.Settings.dll
+C:\Carlos\Projects\IBMConnections-API-Wrapper\APIWrapper\IBM.Connections.Net.APIWrapper\bin\Debug\IBM.Connections.Net.Settings.pdb
+C:\Carlos\Projects\IBMConnections-API-Wrapper\APIWrapper\IBM.Connections.Net.APIWrapper\obj\Debug\IBM.Connections.Net.Api.csprojResolveAssemblyReference.cache
+C:\Carlos\Projects\IBMConnections-API-Wrapper\APIWrapper\IBM.Connections.Net.APIWrapper\obj\Debug\IBM.Connections.Net.Api.dll
+C:\Carlos\Projects\IBMConnections-API-Wrapper\APIWrapper\IBM.Connections.Net.APIWrapper\obj\Debug\IBM.Connections.Net.Api.pdb

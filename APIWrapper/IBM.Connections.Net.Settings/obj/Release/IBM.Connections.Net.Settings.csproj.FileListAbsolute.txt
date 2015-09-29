@@ -3,3 +3,7 @@ C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBM.Connectio
 C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBM.Connections.Net.Settings\obj\Release\IBM.Connections.Net.Settings.dll
 C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBM.Connections.Net.Settings\obj\Release\IBM.Connections.Net.Settings.pdb
 C:\Carlos\October Presentation\APIWrapper\IBMConnectionsAPIWrapper\IBM.Connections.Net.Settings\obj\Release\IBM.Connections.Net.Settings.csprojResolveAssemblyReference.cache
+C:\Carlos\Projects\IBMConnections-API-Wrapper\APIWrapper\IBM.Connections.Net.Settings\bin\Release\IBM.Connections.Net.Settings.dll
+C:\Carlos\Projects\IBMConnections-API-Wrapper\APIWrapper\IBM.Connections.Net.Settings\bin\Release\IBM.Connections.Net.Settings.pdb
+C:\Carlos\Projects\IBMConnections-API-Wrapper\APIWrapper\IBM.Connections.Net.Settings\obj\Release\IBM.Connections.Net.Settings.dll
+C:\Carlos\Projects\IBMConnections-API-Wrapper\APIWrapper\IBM.Connections.Net.Settings\obj\Release\IBM.Connections.Net.Settings.pdb

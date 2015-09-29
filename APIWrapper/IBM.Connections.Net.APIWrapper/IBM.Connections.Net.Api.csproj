@@ -30,11 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net">
-      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="RestSharp">
-      <HintPath>..\packages\RestSharp.105.2.3\lib\net451\RestSharp.dll</HintPath>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\RestSharp.105.2.3\lib\net451\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -54,6 +56,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Activities.cs" />
+    <Compile Include="Models\AuthenticationResult.cs" />
     <Compile Include="Models\BaseEntry.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\CommunitiesResult.cs" />
@@ -64,6 +67,8 @@
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Internal\TokenResult.cs" />
     <Compile Include="Models\Internal\UserCredentials.cs" />
+    <Compile Include="Models\MyProfileResult.cs" />
+    <Compile Include="Models\Request\ProfilesFollow.cs" />
     <Compile Include="Models\Request\Profiles.cs" />
     <Compile Include="Models\Request\CommunityFiles.cs" />
     <Compile Include="Models\Request\FilesShared.cs" />
@@ -83,6 +88,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Result\ServiceIntrospection.cs" />
+    <Compile Include="Services\AuthenticationService.cs" />
     <Compile Include="Services\ProfilesService.cs" />
     <Compile Include="Services\CommunitiesService.cs" />
     <Compile Include="Models\Request\Communities.cs" />

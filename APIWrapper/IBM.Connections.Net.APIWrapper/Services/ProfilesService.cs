@@ -17,6 +17,13 @@ namespace IBM.Connections.Net.Api.Services
          _apiService = currentInstance;
       }
 
+      public MyProfileResult GetMyProfile()
+      {
+         string url = string.Format("/files/basic/api/people/feed?self=true&format=xml");
+
+         return _apiService.Get<MyProfileResult>(url, null);
+      }
+
    
       public ProfilesResult GetCollegues(IBM.Connections.Net.Api.Models.Request.Profiles request)
       {
@@ -31,10 +38,10 @@ namespace IBM.Connections.Net.Api.Services
 
          return _apiService.Get<ProfilesResult>(url, request.ToDictionary());
       }
-      public ProfilesResult GetPeopleFollowing(IBM.Connections.Net.Api.Models.Request.Profiles request)
+      public ProfilesResult GetPeopleFollowing(IBM.Connections.Net.Api.Models.Request.ProfilesFollow request)
       {
 
-         string url = string.Format("/profiles/atom/connections.do");
+         string url = string.Format("/profiles/follow/atom/resources");
 
          return _apiService.Get<ProfilesResult>(url, request.ToDictionary());
       }
