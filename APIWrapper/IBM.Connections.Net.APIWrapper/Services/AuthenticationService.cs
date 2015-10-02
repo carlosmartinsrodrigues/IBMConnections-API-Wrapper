@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using IBM.Connections.Net.Api.Helpers;
 using IBM.Connections.Net.Api.Models.Result;
+using RestSharp.Authenticators;
 namespace IBM.Connections.Net.Api.Services
 {
    public class AuthenticationService
@@ -26,7 +27,7 @@ namespace IBM.Connections.Net.Api.Services
          if (result == null)
             return new AuthenticationResult();
          else
-            return new AuthenticationResult(result.id, result.email, result.name);
+            return new AuthenticationResult(result.id, result.email, result.name, request.Token);
       }
 
 

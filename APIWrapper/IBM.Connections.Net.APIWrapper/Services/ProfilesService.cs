@@ -38,6 +38,7 @@ namespace IBM.Connections.Net.Api.Services
 
          return _apiService.Get<ProfilesResult>(url, request.ToDictionary());
       }
+
       public ProfilesResult GetPeopleFollowing(IBM.Connections.Net.Api.Models.Request.ProfilesFollow request)
       {
 

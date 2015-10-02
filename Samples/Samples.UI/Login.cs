@@ -18,6 +18,9 @@ namespace Samples.UI
       {
          InitializeComponent();
          
+         txtUrl.Text="https://dubxpcvm1192.mul.ie.ibm.com:9444";
+         txtUser.Text= "ajones1";
+         txtPassword.Text = "jones1";
 
          if (connectionsApiService!=null)
          {

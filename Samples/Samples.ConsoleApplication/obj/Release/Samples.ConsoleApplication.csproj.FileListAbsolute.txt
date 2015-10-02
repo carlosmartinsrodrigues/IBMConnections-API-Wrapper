@@ -11,3 +11,4 @@ C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.ConsoleApplication
 C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.ConsoleApplication\obj\Release\Samples.ConsoleApplication.pdb
 C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.ConsoleApplication\bin\Release\Samples.ConsoleApplication.exe
 C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.ConsoleApplication\bin\Release\Samples.ConsoleApplication.pdb
+C:\Carlos\Projects\IBMConnections-API-Wrapper\Samples\Samples.ConsoleApplication\obj\Release\Samples.ConsoleApplication.csprojResolveAssemblyReference.cache

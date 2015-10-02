@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Samples.WebApp.Models;
 using IBM.Connections.Net.Api;
+using System.Web.Security;
 
 namespace Samples.WebApp.Controllers
 {
@@ -61,12 +62,14 @@ namespace Samples.WebApp.Controllers
          ViewBag.ReturnUrl = returnUrl;
          return View();
       }
-
+      IAuthenticationManager Authentication
+      {
+         get { return HttpContext.GetOwinContext().Authentication; }
+      }
       //
       // POST: /Account/Login
       [HttpPost]
       [AllowAnonymous]
-      [ValidateAntiForgeryToken]
       public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
       {
          if (!ModelState.IsValid)
@@ -76,22 +79,43 @@ namespace Samples.WebApp.Controllers
 
          var url = System.Configuration.ConfigurationManager.AppSettings["ConnectionsUrl"];
          var connectionsApiService = new ConnectionsApiService(url, model.Username, model.Password);
-         var result=connectionsApiService.AuthenticationService.Authenticate(model.Username, model.Password);
+         var result = connectionsApiService.AuthenticationService.Authenticate(model.Username, model.Password);
          if (result.Authenticated)
+         {
+            var identity = new ClaimsIdentity(new[] {
+                            new Claim(ClaimTypes.Name, result.Name),
+                        },
+                     DefaultAuthenticationTypes.ApplicationCookie,
+                     ClaimTypes.Name, ClaimTypes.Role);
+
+            identity.AddClaim(new Claim("Token", result.Token));
+            identity.AddClaim(new Claim("http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider", result.UserID));
+            identity.AddClaim(new Claim("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", result.Name));
+
+            // if you want roles, just add as many as you want here (for loop maybe?)
+            identity.AddClaim(new Claim(ClaimTypes.Role, "guest"));
+            // tell OWIN the identity provider, optional
+             identity.AddClaim(new Claim("IdentityProvider", "ConnectionsAuth"));
+
+            Authentication.SignIn(new AuthenticationProperties
+            {
+               IsPersistent = model.RememberMe
+            }, identity);
+
             return RedirectToLocal(returnUrl);
+         }
          else
          {
             ModelState.AddModelError("", "Invalid login attempt.");
             return View(model);
          }
-        
+
       }
 
-     
+
       //
       // POST: /Account/LogOff
       [HttpPost]
-      [ValidateAntiForgeryToken]
       public ActionResult LogOff()
       {
          AuthenticationManager.SignOut();

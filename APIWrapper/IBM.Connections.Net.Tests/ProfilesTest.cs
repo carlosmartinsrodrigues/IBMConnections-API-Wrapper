@@ -72,5 +72,6 @@ namespace IBM.Connections.Net.Tests
          int? expectedTotal = (responseStatus.TotalResults > requestStatus.pageSize ? requestStatus.pageSize : responseStatus.TotalResults);
          Assert.AreEqual(responseStatus.profiles.Count, expectedTotal);
       }
+     
    }
 }

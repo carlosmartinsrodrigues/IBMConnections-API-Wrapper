@@ -55,6 +55,7 @@
     <Compile Include="Helpers\Find.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\ActivityStream.cs" />
     <Compile Include="Models\Activities.cs" />
     <Compile Include="Models\AuthenticationResult.cs" />
     <Compile Include="Models\BaseEntry.cs" />
@@ -68,6 +69,9 @@
     <Compile Include="Models\Internal\TokenResult.cs" />
     <Compile Include="Models\Internal\UserCredentials.cs" />
     <Compile Include="Models\MyProfileResult.cs" />
+    <Compile Include="Models\PostResult.cs" />
+    <Compile Include="Models\Request\CreateFolder.cs" />
+    <Compile Include="Models\Request\ProfilesConnections.cs" />
     <Compile Include="Models\Request\ProfilesFollow.cs" />
     <Compile Include="Models\Request\Profiles.cs" />
     <Compile Include="Models\Request\CommunityFiles.cs" />
@@ -78,6 +82,7 @@
     <Compile Include="Helpers\NotExported.cs" />
     <Compile Include="Helpers\ToMiliseconds.cs" />
     <Compile Include="Models\Request\Status.cs" />
+    <Compile Include="Models\Request\UpdateStatus.cs" />
     <Compile Include="Models\Result\Base.cs" />
     <Compile Include="Models\Result\ServiceConfig.cs" />
     <Compile Include="Models\FilesResult.cs" />

@@ -65,6 +65,9 @@ namespace OfficeAddIn
             hp.TextToDisplay = file.Label;
 
          }
+       
+        
+         
       }
    }
 }

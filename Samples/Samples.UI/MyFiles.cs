@@ -38,7 +38,7 @@ namespace Samples.UI
       }
       string[] Filter { get; set; }
       public IBM.Connections.Net.Api.Models.Result.Entry selectedFile { get; set; }
-
+      public string UserUUId { get; set; }
       ConnectionsApiService ConnectionsAPIService { get; set; }
 
       private void MyFiles_Load(object sender, EventArgs e)
@@ -58,6 +58,7 @@ namespace Samples.UI
             request.pageSize = 500;
             request.Filter = Filter;
             FilesResult response = ConnectionsAPIService.FilesService.GetMyFiles(request);
+            UserUUId = response.Uuid;
             return response;
          });
 

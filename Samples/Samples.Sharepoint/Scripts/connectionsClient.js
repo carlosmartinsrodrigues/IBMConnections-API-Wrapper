@@ -33,7 +33,7 @@ var ibmConnectionsClient =(function() {
 			   sId = sId.replace("tag:profiles.ibm.com,2006:entry", "");
 			  var card = $(this).find('content').html();
 			  $("<div class='container-businesscard'></div>").html(sTitle + "<br/><a class='followUser' rel='" + sId + "' >Click to follow</a><br /> " + card).appendTo("#searchresults");
-			});
+			}); 
 		},
 		error: function(err) {
 			console.log(err);
@@ -75,7 +75,7 @@ var ibmConnectionsClient =(function() {
 	service.PeopleFollowing = function () {
 	   $.support.cors = true;
 	   var _url = domainUrl + '/profiles/follow/atom/resources?type=Profile&source=profiles&inclMessage=True&inclUserStatus=True';
-	  
+	   $("#followingresults").empty();
 	   $.ajax({
 	      type: "GET",
 	      url: _url,
@@ -85,7 +85,7 @@ var ibmConnectionsClient =(function() {
            xhr.setRequestHeader("Authorization", "Basic " + make_base_auth());
            },
         success: function (xml) {
-           $("#followingresults").empty();
+           console.log(xml);
            $(xml).find('entry').each(function () {
               console.log($(this).find('title'));
               var sTitle = $(this).find('title').text();

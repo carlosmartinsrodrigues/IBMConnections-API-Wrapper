@@ -47,5 +47,17 @@ namespace IBM.Connections.Net.Api.Services
            //};
            return _apiService.Get<Activities>(url, request.ToDictionary());
         }
+
+        public ActivityStream GetMyActivityStream()
+        {
+           string url = "/connections/opensocial/basic/rest/activitystreams/@me/@all/@all?format=atom";
+           return _apiService.Get<ActivityStream>(url, null);
+        }
+        public ActivityStream SetMyStatus(IBM.Connections.Net.Api.Models.Request.UpdateStatus request)
+        {
+           string url = string.Format("/connections/opensocial/basic/rest/ublog/{0}/@all?format=atom", _apiService.config.GetUserID());
+
+           return _apiService.Post<ActivityStream>(url, request.ToDictionary());
+        }
      }
 }

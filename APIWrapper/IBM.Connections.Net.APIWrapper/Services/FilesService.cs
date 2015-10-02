@@ -57,9 +57,21 @@ namespace IBM.Connections.Net.Api.Services
          return _apiService.Get<FilesResult>(url, requestParameters.ToDictionary());
       }
 
-      public byte[] DownloadFile(string documentId, string filename)
+
+      public PostResult CreateFolder(IBM.Connections.Net.Api.Models.Request.CreateFolder requestParameters)
       {
-         string url = string.Format("/files/basic/api/library/{0}/feed/document/{1}/media", _apiService.UserID, documentId);
+         string url = string.Format("/files/basic/api/collections/feed");
+
+         return _apiService.Post<PostResult>(url, requestParameters.ToDictionary());
+
+      }
+
+
+      public byte[] DownloadFile(string libraryId, string documentId, string filename)
+      {
+         //https://dubxpcvm1192.mul.ie.ibm.com:9444/files/basic/api/library/6dddf64c-8aef-4f3c-8831-c236988c9ab7/document/54b5b9e3-7373-4950-85b0-d0190fabe923/media/Another%20Dummy%20File.docx
+         //https://dubxpcvm1192.mul.ie.ibm.com:9444/files/basic/api/library/8e5cb1c0-ab47-1032-865f-8c70e77c237a/feed/document/54b5b9e3-7373-4950-85b0-d0190fabe923/media/Another%20Dummy%20File.docx 
+         string url = string.Format("/files/basic/api/library/{0}/document/{1}/media/{2}", libraryId, documentId, filename);
          // string serviceUrl = config.serviceInformation.Where(t => t.Value.Title == MyFiles).SingleOrDefault().Value.URL;// "files/basic/api/library/e916c16d-749f-4faf-8e24-5205bfe2849f/feed";
          //string feed = "/feed";
          //if (serviceUrl.EndsWith(feed))

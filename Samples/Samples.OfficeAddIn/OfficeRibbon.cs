@@ -10,6 +10,7 @@ using IBM.Connections.Net.Api.Models.Result;
 using Microsoft.Office.Interop.Word;
 using IBM.Connections.Net.Api.Models;
 using System.IO;
+using IBM.Connections.Net.Api.Exception;
 namespace Samples.OfficeAddIn
 {
    public partial class OfficeRibbon
@@ -19,10 +20,11 @@ namespace Samples.OfficeAddIn
       {
 
       }
-      void showAuthentication() {
+      void showAuthentication()
+      {
          DialogResult dr = new DialogResult();
          Login login = new Login(connectionsAPIService);
-                
+
          dr = login.ShowDialog();
          if (dr == DialogResult.OK)
          {
@@ -31,8 +33,8 @@ namespace Samples.OfficeAddIn
          }
       }
       void handleAuthentication()
-      {       
-       
+      {
+
          if (connectionsAPIService == null)
          {
             showAuthentication();
@@ -46,29 +48,30 @@ namespace Samples.OfficeAddIn
 
          if (connectionsAPIService != null)
          {
-            MyFiles form = new MyFiles(connectionsAPIService,new string[] { "doc", "docx" });
+            MyFiles form = new MyFiles(connectionsAPIService, new string[] { "doc", "docx" });
             dr = form.ShowDialog();
             if (dr == DialogResult.OK)
             {
                // set the file name from the open file dialog
                Entry selectedFile = form.selectedFile;
+               String UserId = form.UserUUId;
                //string docId= listViewFiles.SelectedItems[0].pr
                //todo: download file
 
 
                try
                {
-                  byte[] fileData = connectionsAPIService.FilesService.DownloadFile(selectedFile.Uuid, selectedFile.Label);
+                  byte[] fileData = connectionsAPIService.FilesService.DownloadFile(UserId,selectedFile.Uuid, selectedFile.Label);
                   string fileNameFullPath;
                   fileNameFullPath = string.Format(@"c:\temp\{0}", selectedFile.Uuid);
                   System.IO.Directory.CreateDirectory(fileNameFullPath);
                   fileNameFullPath += "\\" + selectedFile.Label;
-                  File.WriteAllBytes(fileNameFullPath, fileData); 
+                  File.WriteAllBytes(fileNameFullPath, fileData);
                   Globals.ThisAddIn.Application.Documents.Open(@fileNameFullPath);
                }
-               catch
+               catch (Exception ex)
                {
-
+                  MessageBox.Show("Error as occoured" + ex.InnerException);
                }
 
             }
@@ -85,8 +88,31 @@ namespace Samples.OfficeAddIn
       }
 
       private void button1_Click(object sender, RibbonControlEventArgs e)
-      {       
+      {
          showAuthentication();
       }
+
+      private void button2_Click(object sender, RibbonControlEventArgs e)
+      {
+ //create a service
+         handleAuthentication();
+         MyProfileResult profileResult;
+         //consume service
+         try
+         {
+            profileResult = connectionsAPIService.ProfilesService.GetMyProfile();
+            //print results
+            Microsoft.Office.Interop.Word.Range rng = Globals.ThisAddIn.Application.Selection.Range;
+
+            if (rng != null)
+               rng.Text = profileResult.items.Email;
+         }
+         catch (ConnectionsException ex)
+         {
+         }
+        
+      }
+
+
    }
 }

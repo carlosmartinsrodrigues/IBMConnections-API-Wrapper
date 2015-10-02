@@ -36,6 +36,16 @@ namespace IBM.Connections.Net.Tests
          FilesResult response = connectionsApiService.FilesService.GetMyFiles(request);
          Assert.IsNotNull(response.TotalResults);
          Assert.IsTrue(response.TotalResults >= response.FilesEntry.Count);
+         byte[] content = connectionsApiService.FilesService.DownloadFile(response.Uuid, response.FilesEntry[0].Uuid, response.FilesEntry[0].Label);
+         string filename = @"c:\\temp\\" + response.FilesEntry[0].Label;
+         // Open file for reading
+         System.IO.FileStream _FileStream = new System.IO.FileStream(filename, System.IO.FileMode.Create, System.IO.FileAccess.Write);
+
+         // Writes a block of bytes to this stream using data from a byte array.
+         _FileStream.Write(content, 0, content.Length);
+
+         // close file stream
+         _FileStream.Close();
 
       }
    

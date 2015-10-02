@@ -72,7 +72,7 @@ namespace IBM.Connections.Net.Api.Models.Result
       [XmlElement(ElementName = "content", Namespace = "http://www.w3.org/2005/Atom")]
       public Content Content { get; set; }
       [XmlElement(ElementName = "created", Namespace = "urn:ibm.com/td")]
-      public string Created { get; set; }
+      public DateTime Created { get; set; }
 
 
 

@@ -1,0 +1,56 @@
+﻿@model IBM.Connections.Net.Api.Models.ActivityStream
+
+@{
+    ViewBag.Title = "Following";
+}
+
+<h2>Following</h2>
+
+
+
+@using (Html.BeginForm("SetStatus", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+   <h4>Update your status</h4>
+   <hr />
+   <div class="form-group">
+      <div class="col-md-10" style="float:left;">
+         @Html.TextBox("StatusUpdate", null, new { placeholder = "Update your status", @class = "form-control" })
+      </div>
+      <div class="col-md-4" style="float:left;">
+      <input type="submit" value="Update Status" class="btn btn-default" />
+      </div>
+   </div>
+   
+}
+   <table class="table">
+      <tr>
+         <th></th>
+         <th></th>
+         <th>
+
+         </th>
+
+      </tr>
+
+      @foreach (var item in Model.Items)
+      {
+         <tr>
+            <td>
+               <div class="vcard X-person-display-inline">
+                  <span class="fn" style="display:none;">@item.Author.Name</span>
+                  <span class="x-lconn-userid" style="display: none;">@item.Id</span>
+               </div>
+            </td>
+            <td>
+              @Html.ProfileLinkFromActivity(item.Link, item.Author.Name)
+            </td>
+            <td>
+               @Html.DisplayFor(modelItem => item.Title)
+            </td>
+
+         </tr>
+      }
+
+   </table>
+<script type="text/javascript"
+        src="src="@Html.GetBusinessCardJS()"></script>

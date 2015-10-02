@@ -31,31 +31,23 @@ namespace IBM.Connections.Net.Api
       private IBM.Connections.Net.Api.Models.Internal.UserCredentials user { get; set; }
       public ConnectionsServiceConfiguration config = new ConnectionsServiceConfiguration();
 
+      public ConnectionsApiService(string url, string token)
+      {
+         user = new IBM.Connections.Net.Api.Models.Internal.UserCredentials(token);
+         config.ServiceUrl = url;
+         config.User = user.Username;
+      }
       public ConnectionsApiService(string url, string username, string password)
       {
          user = new IBM.Connections.Net.Api.Models.Internal.UserCredentials(username, password);
-         fillConfiguration(url, username, password);
+         config.ServiceUrl = url;
+         config.User = username;
       }
       public ConnectionsServiceConfiguration GetConfig()
       {
          return config;
       }
       #region privateFunctions
-      private void fillConfiguration(string url, string username, string password)
-      {
-         config.ServiceUrl = url;
-         config.User = username;
-
-
-         //if (config.serviceInformation == null)
-         //   ServiceIntrospection();
-
-
-         //if (config.serviceConfig == null)
-         //   ServiceConfig();
-
-      }
-
 
 
       private RestClient getClient()
@@ -296,16 +288,25 @@ namespace IBM.Connections.Net.Api
             where T : new()
       {
          var client = getClient();
-
+         //hack for my dev environment
+         System.Net.ServicePointManager.ServerCertificateValidationCallback = (senderX, certificate, chain, sslPolicyErrors) => { return true; };
+         //end hack for my dev env
          var request = new RestRequest(url, method);
-         if (requestData != null && requestData.Count > 0)
+         if (method == Method.GET)
          {
-            foreach (var item in requestData)
+            if (requestData != null && requestData.Count > 0)
             {
-               request.AddParameter(item.Key, item.Value);
+               foreach (var item in requestData)
+               {
+                  request.AddParameter(item.Key, item.Value);
+               }
             }
          }
-
+         if(method==Method.POST)
+         {
+            request.RequestFormat = DataFormat.Json;
+            request.AddBody(requestData);
+         }
          IRestResponse<T> response = client.Execute<T>(request);
          if (!(response.StatusCode == HttpStatusCode.OK))
          {
@@ -314,9 +315,13 @@ namespace IBM.Connections.Net.Api
             string innerException = (response.ErrorException.InnerException != null) ? response.ErrorException.InnerException.ToString() : "";
             var connectionsError = new ConnectionsError(response.StatusCode.ToString(), response.StatusDescription, innerException, requestFailed);
             throw new ConnectionsException((int)response.StatusCode, connectionsError);
+            return default(T);
          }
+         else
+         {
 
-         return response.Data;
+            return response.Data;
+         }
       }
       internal byte[] Download<T>(string url)
          where T : new()

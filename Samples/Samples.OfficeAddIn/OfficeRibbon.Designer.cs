@@ -36,25 +36,31 @@
       {
          System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OfficeRibbon));
          this.tab1 = this.Factory.CreateRibbonTab();
-         this.Open = this.Factory.CreateRibbonGroup();
-         this.btnMyFiles = this.Factory.CreateRibbonButton();
-         this.grpSave = this.Factory.CreateRibbonGroup();
-         this.btnSave = this.Factory.CreateRibbonButton();
          this.grpAuthentication = this.Factory.CreateRibbonGroup();
+         this.Open = this.Factory.CreateRibbonGroup();
+         this.group1 = this.Factory.CreateRibbonGroup();
          this.button1 = this.Factory.CreateRibbonButton();
+         this.btnMyFiles = this.Factory.CreateRibbonButton();
+         this.button2 = this.Factory.CreateRibbonButton();
          this.tab1.SuspendLayout();
-         this.Open.SuspendLayout();
-         this.grpSave.SuspendLayout();
          this.grpAuthentication.SuspendLayout();
+         this.Open.SuspendLayout();
+         this.group1.SuspendLayout();
          // 
          // tab1
          // 
          this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
          this.tab1.Groups.Add(this.grpAuthentication);
          this.tab1.Groups.Add(this.Open);
-         this.tab1.Groups.Add(this.grpSave);
+         this.tab1.Groups.Add(this.group1);
          this.tab1.Label = "Testing Connections";
          this.tab1.Name = "tab1";
+         // 
+         // grpAuthentication
+         // 
+         this.grpAuthentication.Items.Add(this.button1);
+         this.grpAuthentication.Label = "Authentication";
+         this.grpAuthentication.Name = "grpAuthentication";
          // 
          // Open
          // 
@@ -62,32 +68,11 @@
          this.Open.Label = "Open";
          this.Open.Name = "Open";
          // 
-         // btnMyFiles
+         // group1
          // 
-         this.btnMyFiles.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-         this.btnMyFiles.Image = ((System.Drawing.Image)(resources.GetObject("btnMyFiles.Image")));
-         this.btnMyFiles.Label = "My Files";
-         this.btnMyFiles.Name = "btnMyFiles";
-         this.btnMyFiles.ShowImage = true;
-         this.btnMyFiles.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnMyFiles_Click);
-         // 
-         // grpSave
-         // 
-         this.grpSave.Items.Add(this.btnSave);
-         this.grpSave.Label = "Save";
-         this.grpSave.Name = "grpSave";
-         // 
-         // btnSave
-         // 
-         this.btnSave.Label = "Save";
-         this.btnSave.Name = "btnSave";
-         this.btnSave.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnSave_Click);
-         // 
-         // grpAuthentication
-         // 
-         this.grpAuthentication.Items.Add(this.button1);
-         this.grpAuthentication.Label = "Authentication";
-         this.grpAuthentication.Name = "grpAuthentication";
+         this.group1.Items.Add(this.button2);
+         this.group1.Label = "Demo";
+         this.group1.Name = "group1";
          // 
          // button1
          // 
@@ -99,6 +84,21 @@
          this.button1.SuperTip = "Login";
          this.button1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button1_Click);
          // 
+         // btnMyFiles
+         // 
+         this.btnMyFiles.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+         this.btnMyFiles.Image = ((System.Drawing.Image)(resources.GetObject("btnMyFiles.Image")));
+         this.btnMyFiles.Label = "My Files";
+         this.btnMyFiles.Name = "btnMyFiles";
+         this.btnMyFiles.ShowImage = true;
+         this.btnMyFiles.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnMyFiles_Click);
+         // 
+         // button2
+         // 
+         this.button2.Label = "Add Email";
+         this.button2.Name = "button2";
+         this.button2.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button2_Click);
+         // 
          // OfficeRibbon
          // 
          this.Name = "OfficeRibbon";
@@ -107,12 +107,12 @@
          this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.OfficeRibbon_Load);
          this.tab1.ResumeLayout(false);
          this.tab1.PerformLayout();
-         this.Open.ResumeLayout(false);
-         this.Open.PerformLayout();
-         this.grpSave.ResumeLayout(false);
-         this.grpSave.PerformLayout();
          this.grpAuthentication.ResumeLayout(false);
          this.grpAuthentication.PerformLayout();
+         this.Open.ResumeLayout(false);
+         this.Open.PerformLayout();
+         this.group1.ResumeLayout(false);
+         this.group1.PerformLayout();
 
       }
 
@@ -121,10 +121,10 @@
       internal Microsoft.Office.Tools.Ribbon.RibbonTab tab1;
       internal Microsoft.Office.Tools.Ribbon.RibbonGroup Open;
       internal Microsoft.Office.Tools.Ribbon.RibbonButton btnMyFiles;
-      internal Microsoft.Office.Tools.Ribbon.RibbonGroup grpSave;
-      internal Microsoft.Office.Tools.Ribbon.RibbonButton btnSave;
       internal Microsoft.Office.Tools.Ribbon.RibbonGroup grpAuthentication;
       internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
+      internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
+      internal Microsoft.Office.Tools.Ribbon.RibbonButton button2;
    }
 
    partial class ThisRibbonCollection
