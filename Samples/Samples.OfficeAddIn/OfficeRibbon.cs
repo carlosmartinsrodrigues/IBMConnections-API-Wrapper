@@ -61,7 +61,7 @@ namespace Samples.OfficeAddIn
 
                try
                {
-                  byte[] fileData = connectionsAPIService.FilesService.DownloadFile(UserId,selectedFile.Uuid, selectedFile.Label);
+                  byte[] fileData = connectionsAPIService.FilesService.DownloadFile(UserId, selectedFile.Uuid, selectedFile.Label);
                   string fileNameFullPath;
                   fileNameFullPath = string.Format(@"c:\temp\{0}", selectedFile.Uuid);
                   System.IO.Directory.CreateDirectory(fileNameFullPath);
@@ -94,24 +94,18 @@ namespace Samples.OfficeAddIn
 
       private void button2_Click(object sender, RibbonControlEventArgs e)
       {
- //create a service
-         handleAuthentication();
-         MyProfileResult profileResult;
-         //consume service
-         try
-         {
-            profileResult = connectionsAPIService.ProfilesService.GetMyProfile();
-            //print results
-            Microsoft.Office.Interop.Word.Range rng = Globals.ThisAddIn.Application.Selection.Range;
 
-            if (rng != null)
-               rng.Text = profileResult.items.Email;
-         }
-         catch (ConnectionsException ex)
-         {
-         }
-        
+         handleAuthentication();
+
+         var result = connectionsAPIService.ProfilesService.GetMyProfile();
+         Microsoft.Office.Interop.Word.Range rng = Globals.ThisAddIn.Application.Selection.Range;
+
+         if (rng != null)
+            rng.Text = result.items.Email;
       }
+
+
+
 
 
    }

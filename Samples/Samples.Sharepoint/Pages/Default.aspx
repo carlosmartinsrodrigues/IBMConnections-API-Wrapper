@@ -53,13 +53,8 @@
       <div id="searchresults"></div>
     </article>
   </section>
+  
   <section id="section2">
-    <input type="radio" name="sections" id="followingOption">
-    <label for="followingOption">Following</label>
-    <article>
-       <div id="followingresults"></div>  </article>
-  </section>
-  <section id="section3">
     <input type="radio" name="sections" id="myStatusOption">
     <label for="myStatusOption">My Status</label>
     <article>

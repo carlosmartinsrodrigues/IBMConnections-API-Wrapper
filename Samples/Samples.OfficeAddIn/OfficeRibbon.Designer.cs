@@ -37,10 +37,10 @@
          System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OfficeRibbon));
          this.tab1 = this.Factory.CreateRibbonTab();
          this.grpAuthentication = this.Factory.CreateRibbonGroup();
-         this.Open = this.Factory.CreateRibbonGroup();
-         this.group1 = this.Factory.CreateRibbonGroup();
          this.button1 = this.Factory.CreateRibbonButton();
+         this.Open = this.Factory.CreateRibbonGroup();
          this.btnMyFiles = this.Factory.CreateRibbonButton();
+         this.group1 = this.Factory.CreateRibbonGroup();
          this.button2 = this.Factory.CreateRibbonButton();
          this.tab1.SuspendLayout();
          this.grpAuthentication.SuspendLayout();
@@ -62,18 +62,6 @@
          this.grpAuthentication.Label = "Authentication";
          this.grpAuthentication.Name = "grpAuthentication";
          // 
-         // Open
-         // 
-         this.Open.Items.Add(this.btnMyFiles);
-         this.Open.Label = "Open";
-         this.Open.Name = "Open";
-         // 
-         // group1
-         // 
-         this.group1.Items.Add(this.button2);
-         this.group1.Label = "Demo";
-         this.group1.Name = "group1";
-         // 
          // button1
          // 
          this.button1.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -84,6 +72,12 @@
          this.button1.SuperTip = "Login";
          this.button1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button1_Click);
          // 
+         // Open
+         // 
+         this.Open.Items.Add(this.btnMyFiles);
+         this.Open.Label = "Open";
+         this.Open.Name = "Open";
+         // 
          // btnMyFiles
          // 
          this.btnMyFiles.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -93,9 +87,15 @@
          this.btnMyFiles.ShowImage = true;
          this.btnMyFiles.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnMyFiles_Click);
          // 
+         // group1
+         // 
+         this.group1.Items.Add(this.button2);
+         this.group1.Label = "Demo";
+         this.group1.Name = "group1";
+         // 
          // button2
          // 
-         this.button2.Label = "Add Email";
+         this.button2.Label = "Add email";
          this.button2.Name = "button2";
          this.button2.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button2_Click);
          // 

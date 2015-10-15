@@ -168,9 +168,7 @@ $(document).ready(function () {
       event.preventDefault(); // cancel default behavior
       ibmConnectionsClient.PerformSearch($("#search").val());
    })
-   $("#followingOption").click(function (event) {
-      ibmConnectionsClient.PeopleFollowing();
-   })
+  
    $("#searchresults").on('click', '.followUser', function () {
       ibmConnectionsClient.StartFollowing($(this).attr("rel"));
    });
